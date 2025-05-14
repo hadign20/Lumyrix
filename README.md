@@ -22,25 +22,8 @@
 ---
 
 ## 🗂️ Project Structure
-Lumyrix/
-│
-├── aws/ # AWS training & deployment scripts
-├── config/ # All YAML configs (model, radiomics, viz, etc.)
-├── data/ # Local data files (gitignored)
-├── notebooks/ # Jupyter experiments
-├── saved_models/ # Trained model checkpoints
-├── src/ # All source code
-│ ├── classical_ml/
-│ ├── deep_learning/
-│ ├── feature_analysis/
-│ ├── feature_extraction/
-│ ├── feature_selection/
-│ ├── visualization/
-│ └── main.py # Main training script
-├── tests/ # (Coming soon) unit/integration tests
-├── requirements.txt
-├── LICENSE
-└── README.md
+![{E3956E0A-58ED-4597-A8B3-47485ADD796A}](https://github.com/user-attachments/assets/7d1d200f-4d56-4e86-a408-80cf0f939b7b)
+
 
 
 
