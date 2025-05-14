@@ -41,3 +41,83 @@ pip install -r requirements.txt
 
 # Run the main training script
 python src/main.py --config config/deep_learning/cifar10_baseline.yaml
+```
+
+---
+
+## 📊 Config System
+All components of Lumyrix are driven by structured YAML files.
+You can easily switch between experiments using command-line flags or Hydra overrides.
+
+Example:
+
+```yaml
+# config/deep_learning/cifar10_baseline.yaml
+model:
+  type: "CNN"
+  num_classes: 10
+  learning_rate: 0.001
+  epochs: 20
+  optimizer: "Adam"
+  batch_size: 64
+```
+
+You can later extend with:
+
+config/classical_ml/svm.yaml
+
+config/radiomics/pyRadiomics_settings.yaml
+
+config/visualizations/umap_plot.yaml
+
+
+
+
+---
+
+## 📦 Dependencies
+
+Python 3.8+
+
+PyTorch
+
+torchvision
+
+scikit-learn
+
+pandas, numpy, matplotlib
+
+PyYAML
+
+All listed in requirements.txt.
+
+
+
+---
+
+## 🧠 What's Coming
+
+ CNN on CIFAR-10
+
+ SHAP & feature importance
+
+ Radiomics feature extraction
+
+ AWS EC2 training
+
+ FastAPI model serving
+
+ CI tests with GitHub Actions
+
+
+
+---
+
+## 📄 License
+MIT License © 2025 Hadi Ghahremannezhad
+
+---
+
+## 🙌 Contributions
+Open to PRs, feedback, and collaborations.
+Let’s build the smartest ML playground together.
