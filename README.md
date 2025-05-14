@@ -22,4 +22,39 @@
 ---
 
 ## 🗂️ Project Structure
+Lumyrix/
+│
+├── aws/ # AWS training & deployment scripts
+├── config/ # All YAML configs (model, radiomics, viz, etc.)
+├── data/ # Local data files (gitignored)
+├── notebooks/ # Jupyter experiments
+├── saved_models/ # Trained model checkpoints
+├── src/ # All source code
+│ ├── classical_ml/
+│ ├── deep_learning/
+│ ├── feature_analysis/
+│ ├── feature_extraction/
+│ ├── feature_selection/
+│ ├── visualization/
+│ └── main.py # Main training script
+├── tests/ # (Coming soon) unit/integration tests
+├── requirements.txt
+├── LICENSE
+└── README.md
 
+
+
+---
+
+## ⚙️ Setup
+
+```bash
+# Clone the repo
+git clone https://github.com/yourusername/lumyrix.git
+cd lumyrix
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Run the main training script
+python src/main.py --config config/deep_learning/cifar10_baseline.yaml
