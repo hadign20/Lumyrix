@@ -1,4 +1,4 @@
-# 🔬 Lumyrix: A Modular Deep Learning Playground
+# <img src="https://github.com/user-attachments/assets/c8430c6c-6e6f-4eb2-af82-eb7a9929fc94" width="100" height="100"> Lumyrix: A Modular Deep Learning Playground
 
 ![Build Status](https://img.shields.io/badge/build-passing-brightgreen)
 ![Python](https://img.shields.io/badge/python-3.8%2B-blue)
