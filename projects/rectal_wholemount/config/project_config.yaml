@@ -1,0 +1,24 @@
+# projects/rectal_wholemount/config/project_config.yaml
+project_name: "rectal_wholemount"
+description: "Prediction of pathological complete response (PCR) using radiomics features"
+author: "Lumyrix Team"
+created_date: "2025-05-20"
+
+paths:
+  data_path: D:/projects/colon_tumor/data/features/quarters
+  result_path: "results"
+  
+files:
+  train_files: ["features_tumorbed_rad_whole"]
+  validation_files: ["features_tumorbed_rad_half"]
+  
+sheets:
+  train_sheets: []  # Empty for all sheets
+  validation_sheets: []  # Empty for all sheets
+  
+columns:
+  outcome_column: "Outcome"
+  case_column: "Case"
+  exclude_columns: ["Case"]
+  categorical_columns: []
+  required_features: []  # Features to always keep regardless of selection

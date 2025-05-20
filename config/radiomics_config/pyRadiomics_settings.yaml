@@ -1,0 +1,8 @@
+# config/deep_learning/cifar10_baseline.yaml
+model:
+  type: "CNN"
+  num_classes: 10
+  learning_rate: 0.001
+  epochs: 20
+  optimizer: "Adam"
+  batch_size: 64

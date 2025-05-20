@@ -1,0 +1,16 @@
+feature_selection:
+  methods:
+    - mrmr
+    - lasso
+    - pca
+    - tree
+  mrmr:
+    num_features: 20
+    cv_folds: 5
+  lasso:
+    cv_folds: 5
+  pca:
+    n_components: 2
+  tree:
+    model_type: random_forest
+    num_features: 20

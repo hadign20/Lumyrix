@@ -1,0 +1,8 @@
+feature_selection:
+  pipeline: ["pvalue", "correlation", "mrmr"]
+  p_value_threshold: 0.05
+  auc_threshold: 0.65
+  r2_threshold: 0.05
+  correlation_threshold: 0.8
+  num_features: 20
+  output_dir: results/feature_selection

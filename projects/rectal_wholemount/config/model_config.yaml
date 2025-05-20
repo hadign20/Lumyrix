@@ -1,0 +1,37 @@
+# projects/rectal_wholemount/config/model_config.yaml
+model_building:
+  enabled: true
+  
+resampling:
+  enabled: false
+  method: "RandomOverSampler"  # Options: RandomOverSampler, SMOTEENN, SMOTE
+  
+evaluation:
+  method: "cross_validation"  # Options: train_test_split, cross_validation
+  test_size: 0.3
+  cv_folds: 5
+  hyperparameter_tuning: true
+  
+  # Models to evaluate
+  classifiers:
+    - "LogisticRegression"
+    - "RandomForest"
+    - "SVM"
+    - "NaiveBayes"
+    - "MLP"
+  
+external_validation:
+  enabled: true
+  resampling: false
+  normalize: true
+  remove_outliers: false
+  
+  # Visualization settings
+  visualization:
+    enabled: true
+    plots:
+      - "roc_curve"
+      - "calibration_curve"
+      - "confusion_matrix"
+      - "precision_recall_curve"
+      - "decision_curve_analysis"

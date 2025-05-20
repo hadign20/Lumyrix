@@ -1,0 +1,46 @@
+tabular_data:
+  data_path: "D:/projects/PNET Radiomics/data/sampled_with_size"
+  train_file: "JayaFeaturesTrainIsotropicSamplingPrepared_fixed.xlsx"
+  val_file: "Texture_Test_Isotropic_Sampling_RectangularPrepared_fixed.xlsx"
+  result_path: "D:/projects/PNET Radiomics/results/sampled_with_size"
+  outcome_column: "Grade"
+  exclude_columns: ["Patient_ID"]
+  exclude_columns_val: ["Case_ID"]
+  features_to_keep: ["Size"]
+  categorical_columns: []
+
+setup:
+  mode: "external"  # or "split"
+  external_validation_file: "D:/projects/PNET Radiomics/data/sampled_with_size/external.xlsx"
+  train_test_split:
+    test_size: 0.3
+    random_state: 42
+
+feature_selection:
+  enabled: true
+  correlation_threshold: 0.8
+  method: "mrmr"  # options: 'mrmr', 'pvalue', 'auc', 'composite'
+  min_features: 13
+  max_features: 13
+  mrmr_top_k: 15
+
+model:
+  enabled: true
+  classifiers: ["LogisticRegression", "RandomForest", "SVM", "NaiveBayes"]
+  resampling: true
+  resampling_method: "RandomOverSampler"  # or "SMOTEENN"
+  evaluation: "cross_validation"          # or "train_test_split" or "cv_feature_selection_model_building"
+  test_size: 0.3
+  cv_folds: 5
+  tuning: true
+
+external_validation:
+  enabled: true
+  normalize: true
+  remove_outliers: false
+  resampling: false
+
+output:
+  save_plots: true
+  save_models: true
+  save_roc_data: true

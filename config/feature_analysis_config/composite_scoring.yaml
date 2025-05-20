@@ -1,0 +1,12 @@
+univariate:
+  task_type: classification  # Options: classification, regression
+  cv_folds: 5
+  outcome_column: Grade
+  exclude_columns: ["Patient_ID"]
+  categorical_columns: ["Gender", "Smoking"]
+  classification:
+    test_numeric: wilcox        # Options: wilcox, ttest
+    test_categorical: chi2      # Options: chi2, fisher
+  regression:
+    test_type: ols              # Options: ols, correlation
+    correlation_method: spearman  # Options: spearman, pearson

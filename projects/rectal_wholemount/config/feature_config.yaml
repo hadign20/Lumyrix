@@ -1,0 +1,84 @@
+# projects/rectal_wholemount/config/feature_config.yaml
+setup:
+  task_type: "classification"
+  outcome_column: "Outcome"
+  exclude_columns: ["Case"]
+  categorical_columns: []
+  required_features: []
+
+paths:
+  output_dir: "D:\projects\Lumyrix\projects\rectal_wholemount/results/feature_analysis"
+
+normalization:
+  enabled: true
+  method: "standard"  # "standard" or "minmax"
+
+feature_correlation:
+  enabled: true
+  threshold: 0.8
+  method: "spearman"
+  favor_higher_auc: true
+
+feature_selection:
+  enabled: true
+  method: "mrmr"  # Options: mrmr, pvalue, auc, composite
+  min_features: 10
+  max_features: 10
+  mrmr_num_features: 15
+  
+  # Selection pipeline steps
+  selection_pipeline:
+    - "pvalue"     # Filter by p-value
+    - "correlation"  # Remove correlated features
+    - "mrmr"       # Rank by MRMR
+
+  # Step-specific settings
+  pvalue:
+    threshold: 0.05
+  
+  auc:
+    threshold: 0.6
+  
+  correlation:
+    threshold: 0.8
+    favor_higher_auc: true
+  
+  mrmr:
+    n_features: 15
+    cv_folds: 5
+  
+  composite:
+    n_features: 10
+    weights:
+      p_value: 1.0
+      auc: 1.0
+      mrmr: 1.0
+      tree_importance: 1.0
+
+# Feature analysis settings
+univariate:
+  enabled: true
+  cv_folds: 5
+
+mrmr:
+  enabled: true
+  n_features: 15
+  cv_folds: 5
+
+tree_importance:
+  enabled: true
+  n_estimators: 100
+  cv_folds: 5
+
+shap_importance:
+  enabled: false
+  model_type: "tree"
+  n_samples: 100
+
+composite:
+  enabled: true
+  weights:
+    p_value: 1.0
+    auc: 1.0
+    mrmr: 1.0
+    tree_importance: 1.0

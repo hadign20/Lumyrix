@@ -1,0 +1,8 @@
+feature_comparison:
+  enabled: True
+  output_dir: results/feature_comparison
+  tests: ['ks', 'ttest', 'mannwhitney']
+  plot_types: ['kde', 'hist', 'box', 'violin']
+  correlation: True
+  summary_stats: True
+  save_table: True
